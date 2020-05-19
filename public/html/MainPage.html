@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>MainPage</title>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script>
+    var app = angular.module("myApp", ["ngRoute"]);
+        app.config(function($routeProvider) {
+            $routeProvider
+            .when("/", {
+                templateUrl : "page1.html"
+            })
+            .when("/page2", {
+                templateUrl : "page2.html"
+        })
+    });
+  </script>
+</head>
+<body ng-app="myApp">
+    <header>
+        <div class="container-fluid">
+            <div class="d-flex flex-row-reverse">
+            <button type="button" class="btn btn-primary pt-0 my-3 ml-1 pb-0">
+                <span>سبد خرید</span>
+            <i style='font-size:15px' class='fas pt-1 pl-2 pb-0'>&#xf07a;</i>
+            </button>
+            <button type="button" class="btn btn-outline-primary pt-0 my-3 mx-1 pb-0">
+                <span>ورود/عضویت</span>
+                <i style='font-size:15px' class='fas pl-2 pt-1'>&#xf2bd;</i>
+            </button>
+            <h4 id="h4" class="mr-auto my-3"><b><i>Snap! Marcet</i></b></h4>
+            </div>
+            
+            <div class="input-group mb-3 input-group my-3">
+                <div class="input-group-prepend">
+                    <button class="btn btn-success" type="submit">
+                        <i style="font-size:20px" class="fa">&#xf002;</i>
+                    </button>
+               </div>
+               <input id="input1" type="text" class="form-control" placeholder="جستجو محصول">
+             </div>
+        </div>
+   
+        <nav class="navbar navbar-expand-sm justify-content-center">
+            <div class="px-5">
+                <a href="#/!">
+                    <span>دسته بندی</span>
+                    <span class="px-1">
+                        <i style='font-size:15px' class='fas'>&#xf0c9;</i>
+                    </span>
+                </a>   
+            </div>
+            <div class="px-5">
+                <a href="#!page2">
+                    <span>صفحه اصلی</span>
+                    <span class="px-1">
+                        <i style='font-size:15px' class='fas'>&#xf015;</i>
+                    </span>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <div ng-view></div>
+        {{amin}}
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</body>
+</html>
